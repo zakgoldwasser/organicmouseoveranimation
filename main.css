@@ -1,0 +1,115 @@
+*,body,html {
+    margin: 0;
+    padding: 0;
+  }
+body{
+   width:100%;
+
+    background-color: #020411;
+    box-sizing: border-box;
+    padding: 0;
+    overflow:hidden;
+}
+.body-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:1em;
+    padding:10%;
+    padding-top:15%
+
+}
+path{
+    stroke:url(#color);
+    fill:none;
+    stroke-width: 1px;
+    stroke-dasharray: 4500;
+    stroke-dashoffset:4500;
+}
+.heading-container {
+    grid-column: span 4;
+    gap: 5em;
+    vertical-align: bottom;
+    font-size:75px;
+    line-height: 100px;
+    z-index:300;
+    color:#e8e8e8;
+}
+h1{
+    transform: skewX(-7deg);
+    font-family: 'Mukta', sans-serif;}
+.glow{
+    position :absolute; 
+            background:#2991b6;  
+            top: 10;
+            left: 10;
+            right: 10; 
+            bottom:10; 
+            z-index:190;
+            transition:all ease-in-out .2s;
+}
+.blur{
+    filter: blur(2px);
+    z-index: -1;
+}
+.xl-blur{
+    filter: blur(6px);
+}
+#layer_1 path:nth-child(4n+1){
+    stroke-dashoffset:4500;
+    opacity:1;
+    transition:all ease-in-out .45s
+}
+#layer_1 path:nth-child(4n+2){
+    stroke-dashoffset:4500;
+    opacity:.9;
+    transition:all ease-in-out .65s
+}
+#layer_1 path:nth-child(4n+3){
+    stroke-dashoffset:4500;
+    opacity:.8;
+    transition:all ease-in-out .82s
+}
+#layer_1 path:nth-child(4n+4){
+    stroke-dashoffset:4500;
+    opacity:.3;
+    transition:all ease-in-out .55s
+}
+.thumbnail-container{
+    position:relative;
+    width:100%; 
+    aspect-ratio:4/3;
+    cursor:pointer;
+}
+.trigger{
+    position :absolute; 
+            background:rgb(20, 22, 38);  
+            top: 0;
+            left: 0;
+            right: 0; 
+            bottom:0; 
+            z-index:200;
+            
+}
+.trigger h1{
+    position: absolute;
+    top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:#393d54;
+}
+@keyframes animate{
+    0%{
+        fill: none;
+        stroke-dashoffset:4500;
+    }
+    100%{
+        stroke-dashoffset:0;
+    }
+}
+.radial-g{
+    z-index:100;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(rgba(11, 12, 20, 0),rgb(11, 12, 20) 70%);
+}
